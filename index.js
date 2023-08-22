@@ -1,5 +1,5 @@
 import express from "express";
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 import cors from "cors";
 
 import userRoutes from "./routes/users.js";
@@ -17,10 +17,10 @@ app.use("/user", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 const CONNECTION_URL =
-  "mongodb+srv://admin:admin@stack-overflow-clone.qgwyim0.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://admin:admin@cluster0.98zf3zx.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
-  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopoLogy: true })
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
     app.listen(PORT, () => {
       console.log(`server running on port ${PORT}`);
